@@ -3,8 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    // private static bool IsWebGL() => Application.platform == RuntimePlatform.WebGLPlayer;
-
 
     public void MoveToScene(int SceneID)
     {
@@ -12,22 +10,16 @@ public class ChangeScene : MonoBehaviour
     }
 
 
-    public void LinkToScene(string LocationLink)
+    public void LinkToScene(int SceneID)
     {
-        Debug.Log(LocationLink);
-        // SceneManager.LoadScene(LocationLink);
 
-        #if UNITY_EDITOR // UNITY_WEBGL borken???
+        #if UNITY_WEBGL
             
-            Debug.Log("Unity Editor");
-
-        #elif UNITY_IOS
-
-            Debug.Log("Unity iOS");
+            Application.OpenURL("https://www.youtube.com/watch?v=XfELJU1mRMg");
 
         #else
 
-            Debug.Log("Any other platform");
+            SceneManager.LoadScene(SceneID);
 
         #endif
         

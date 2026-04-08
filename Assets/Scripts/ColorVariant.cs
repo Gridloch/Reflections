@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RandomVariant : MonoBehaviour
+public class ColorVariant : MonoBehaviour
 {
     // Todo:
     // - Make rug log to console on click
