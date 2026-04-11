@@ -23,7 +23,7 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Scenes/Kitchen.unity
     m_guid: e11959227c533a6ee8f6f868ca73ae98
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: Assets/Scenes/Garden.unity
     m_guid: 8ba7643c447d9b578b96365d52c84f48
   m_HasScriptingDefines: 0
@@ -350,7 +350,10 @@ MonoBehaviour:
     - line: '|   m_BuildTargetGroupLightmapSettings: []'
     - line: '|   m_BuildTargetGroupLoadStoreDebugModeSettings: []'
     - line: '|   m_BuildTargetNormalMapEncoding: []'
-    - line: '|   m_BuildTargetDefaultTextureCompressionFormat: []'
+    - line: '|   m_BuildTargetDefaultTextureCompressionFormat:'
+    - line: '|   - serializedVersion: 3'
+    - line: '|     m_BuildTarget: WebGL'
+    - line: '|     m_Formats: 05000000'
     - line: '|   playModeTestRunnerEnabled: 0'
     - line: '|   runPlayModeTestAsEditModeTest: 0'
     - line: '|   actionOnDotNetUnhandledException: 1'
