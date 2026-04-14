@@ -8417,10 +8417,23 @@ function dbg(text) {
   		Module.WebPlayer.PlayerIsInitialized();
   	}
 
+  function _LoadFromLocalStorage() {
+          var value = localStorage.getItem("reflectionsData");
+          if (value === null) value = "";
+          var lengthBytes = lengthBytesUTF8(value) + 1;
+          var stringOnWasmHeap = _malloc(lengthBytes);
+          stringToUTF8(value, stringOnWasmHeap, lengthBytes);
+          return stringOnWasmHeap;
+      }
+
   function _OpenSameTab(url)
       {
           url = UTF8ToString(url);
           window.open(url,"_self");
+      }
+
+  function _SaveToLocalStorage(jsonString) {
+          localStorage.setItem("reflectionsData", UTF8ToString(jsonString));
       }
 
   function ___assert_fail(condition, filename, line, func) {
@@ -17084,7 +17097,9 @@ var wasmImports = {
   "JS_WebGPU_SetCommandEncoder": _JS_WebGPU_SetCommandEncoder,
   "JS_WebGPU_Setup": _JS_WebGPU_Setup,
   "JS_WebPlayer_FinishInitialization": _JS_WebPlayer_FinishInitialization,
+  "LoadFromLocalStorage": _LoadFromLocalStorage,
   "OpenSameTab": _OpenSameTab,
+  "SaveToLocalStorage": _SaveToLocalStorage,
   "__assert_fail": ___assert_fail,
   "__dlsym": ___dlsym,
   "__syscall__newselect": ___syscall__newselect,

@@ -4,8 +4,10 @@ using System.Runtime.InteropServices;
 
 public class ChangeScene : MonoBehaviour
 {
-    [DllImport("__Internal")]
-    private static extern void OpenSameTab(string link);
+    #if !UNITY_EDITOR && UNITY_WEBGL
+        [DllImport("__Internal")]
+        private static extern void OpenSameTab(string link);
+    #endif
 
     private static string[] Links = {
         "/town/main map/index.html",

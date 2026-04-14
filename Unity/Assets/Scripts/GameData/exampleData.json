@@ -1,0 +1,132 @@
+{
+    "timeDayStart": "2026/04/12/14:30",
+    "_comment_timeDayStart": "Will need to use a format that C# can serialise. Saves the start time of the last rollover to check if the next rollover is ready",
+    "money": 1000,
+    "_comment_money": "Is the amount of money the user has",
+    "careSlots": 4,
+    "_comment_careSlots": "The number of reflections the user can care for",
+    "roomData": {
+        "kitchenEntryWall": 3,
+        "kitchenEntryrug":  2,
+        "kitchenWall": 7,
+        "kitchencounter": 5,
+        "livingRoomwall": 5,
+        "livingRoomrug": 2,
+        "livingRoomdisplay": [
+            "shinyRock",
+            "oldBell",
+            "purpleGeode"
+        ],
+        "garden": {
+            "slot3": {
+                "plant": "blueberry",
+                "waterLevel": 3,
+                "stage": 2,
+                "stageStart": "2026/04/12/15:30:12",
+                "harvests": 2
+            },
+            "slot8": {
+                "plant": "apple",
+                "waterLevel": 5,
+                "stage": 0,
+                "stageStart": "2026/04/12/15:31:29",
+                "harvests": 0
+            }
+        },
+        "_comment": "Saves the customisation data for the player's home"
+    },
+    "inventory": {
+        "petFood": {"count": 10},
+        "treats": {"count": 6},
+        "tags": {"count": 1, "color": 2, "pattern": 3, "shape": 3},
+        "blackberrySeeds": {"count": 2},
+        "blueberries": {"count": 7},
+        "raspberries": {"count": 2},
+        "raspberryJam": {"count": 1},
+        "shinyRock": {"count": 3}
+    },
+    "_comment_inventory": "Which items the user has, and how many. Further data about the items, such as their descriptions and image data, is stored elsewhere",
+    "currentReflections": {
+        "2": {
+            "name": "Plumberry",
+            "active": true,
+            "parents": ["0", "0"],
+            "genotype": [
+                ["M", "m"],
+                ["K", "k", 2]
+            ],
+            "food": 2,
+            "water": true,
+            "litterTray": false,
+            "brush": 7,
+            "treats": 3,
+            "energyUsed": -5,
+            "care": [5, 5, 4, 5, 5, 5, 5],
+            "status":[
+                {
+                    "name": "sick",
+                    "statusStart": "2026/04/12/15:25:06",
+                    "treatedToday": true,
+                    "treatmentCount": 1
+                }
+            ],
+            "temperamentShiftKitten": -2,
+            "temperamentShiftAdult": 1,
+            "obedienceShiftKitten": 3,
+            "obedienceShiftAdult": 0,
+            "wearing": {
+                "collar": 0,
+                "collarTag": [0, 0, 0],
+                "harness": 4,
+                "harnessTag": [2, 12, 5]
+            }
+        },
+        "4": {
+            "name": "Daisy",
+            "active": true,
+            "parents": ["1", "2"],
+            "genotype": [
+                ["m", "m"],
+                ["K", "k", 1]
+            ],
+            "food": 1,
+            "water": true,
+            "litterTray": false,
+            "brush": 7,
+            "treats": 3,
+            "energyUsed": -12,
+            "care": [5, 5, 5, 5, 5, 5, 5],
+            "status": [],
+            "temperamentShiftKitten": 3,
+            "temperamentShiftAdult": 0,
+            "obedienceShiftKitten": 2,
+            "obedienceShiftAdult": 0,
+            "wearing": {
+                "collar": 1,
+                "collarTag": [0 ,0 ,0],
+                "harness": 0,
+                "harnessTag": [0 ,0 ,0]
+            }
+        }
+    },
+    "previousReflections": {
+        "1": {
+            "name": "Blackie",
+            "parents": ["0", "0"],
+            "genotype": [
+                ["M", "m"],
+                ["K", "k", 3]
+            ],
+            "status": "retired"
+        },
+        "3": {
+            "name": "Melon",
+            "parents": ["1", "2"],
+            "genotype": [
+                ["M", "M"],
+                ["K", "k", 2]
+            ],
+            "status": "sold"
+        }
+    }
+}

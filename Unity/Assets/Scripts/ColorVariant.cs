@@ -10,9 +10,10 @@ public class ColorVariant : MonoBehaviour
     // - save value for switching scenes / changing page
 
     public int currentColorList = 0;
-    public int currentColor = 0;
+    public int customisationID = -1;
     
-    SpriteRenderer m_SpriteRenderer;
+    private int currentColor = 0;
+    private SpriteRenderer m_SpriteRenderer;
     static Color[] lightColorList = 
     {
         new Color(1f, 0.8f, 0.9f), // Rose
@@ -63,6 +64,7 @@ public class ColorVariant : MonoBehaviour
 
     void Start()
     {
+        // Use the correct colour list for the customisation type
         switch(currentColorList) 
         {
         case 1:
@@ -76,6 +78,26 @@ public class ColorVariant : MonoBehaviour
             break;
         }
 
+        // Load current colour
+        switch (customisationID)
+        {
+            case 1:
+                currentColor = SaveLoadManager.Instance.playerData.GetRoomCustomisation().kitchenEntryWall;
+                break;
+            case 2:
+                currentColor = SaveLoadManager.Instance.playerData.GetRoomCustomisation().kitchenEntryRug;
+                break;
+            case 3:
+                currentColor = SaveLoadManager.Instance.playerData.GetRoomCustomisation().kitchenWall;
+                break;
+            case 4:
+                currentColor = SaveLoadManager.Instance.playerData.GetRoomCustomisation().kitchenCounter;
+                break;
+            default:
+                currentColor = 0;
+                break;
+        }
+
         //Fetch the SpriteRenderer from the GameObject
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         //Set the GameObject's Color quickly to a set Color (blue)
@@ -83,6 +105,7 @@ public class ColorVariant : MonoBehaviour
     }
 
     void OnMouseDown(){
+        // Update colour
         if (currentColor < colorList.Length - 1)
         {
             currentColor++;
@@ -92,6 +115,24 @@ public class ColorVariant : MonoBehaviour
             currentColor = 0;
             m_SpriteRenderer.color = colorList[currentColor];
         }
-        Debug.Log("Sprite Clicked. Colour: " + currentColor.ToString());
+
+        // Save new colour
+        switch (customisationID)
+        {
+            case 1:
+                SaveLoadManager.Instance.playerData.GetRoomCustomisation().kitchenEntryWall = currentColor;
+                break;
+            case 2:
+                SaveLoadManager.Instance.playerData.GetRoomCustomisation().kitchenEntryRug = currentColor;
+                break;
+            case 3:
+                SaveLoadManager.Instance.playerData.GetRoomCustomisation().kitchenWall = currentColor;
+                break;
+            case 4:
+                SaveLoadManager.Instance.playerData.GetRoomCustomisation().kitchenCounter = currentColor;
+                break;
+        }
+        SaveLoadManager.SaveJSON();
+        // Debug.Log("Sprite Clicked. Colour: " + currentColor.ToString());
     }
 }

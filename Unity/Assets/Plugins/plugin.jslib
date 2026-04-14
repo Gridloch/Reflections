@@ -7,10 +7,10 @@ var plugin = {
 
 
     SaveToLocalStorage: function (jsonString) {
-        localStorage.setItem(UTF8ToString(reflectionsData), UTF8ToString(jsonString));
+        localStorage.setItem("reflectionsData", UTF8ToString(jsonString));
     },
     LoadFromLocalStorage: function () {
-        var value = localStorage.getItem(UTF8ToString(reflectionsData));
+        var value = localStorage.getItem("reflectionsData");
         if (value === null) value = "";
         var lengthBytes = lengthBytesUTF8(value) + 1;
         var stringOnWasmHeap = _malloc(lengthBytes);
