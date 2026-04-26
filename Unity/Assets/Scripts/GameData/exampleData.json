@@ -51,6 +51,7 @@
             "name": "Plumberry",
             "active": true,
             "parents": ["0", "0"],
+            "age": 25,
             "genotype": [
                 ["M", "m"],
                 ["K", "k", 2]
@@ -85,6 +86,7 @@
             "name": "Daisy",
             "active": true,
             "parents": ["1", "2"],
+            "age": 15,
             "genotype": [
                 ["m", "m"],
                 ["K", "k", 1]
@@ -113,6 +115,7 @@
         "1": {
             "name": "Blackie",
             "parents": ["0", "0"],
+            "age": 25,
             "genotype": [
                 ["M", "m"],
                 ["K", "k", 3]
@@ -122,6 +125,7 @@
         "3": {
             "name": "Melon",
             "parents": ["1", "2"],
+            "age": 15,
             "genotype": [
                 ["M", "M"],
                 ["K", "k", 2]
