@@ -9,8 +9,6 @@ body { text-align: center; padding: 0; border: 0; margin: 0; background-color: #
 
 #left{float:left;}
 #right{float:right;}
-#main{margin:0 auto;width:1064px;background-color: #ddd;}
-
 .border{
   width:100px;
   height:100vh;
@@ -19,6 +17,11 @@ body { text-align: center; padding: 0; border: 0; margin: 0; background-color: #
   background-size: 50px;
   background-position: center;
 }
+@media only screen and (max-width: 1164px) {.border{display:none;}}
+@media only screen and (min-width: 1164px)and (max-width: 1264px) {.border{display:block;width: 50px;}}
+
+#main{margin:0 auto;width:1064px;background-color: #ddd;}
+
 .center {
   display: block;
   margin-left: auto;
@@ -45,9 +48,8 @@ body { text-align: center; padding: 0; border: 0; margin: 0; background-color: #
   width:100%;
   height: 100%;
   border: none;
-  padding: 14px 16px;
 }
-.topNav button a {color: #fff;text-decoration: none;width: 100%;height: 100%;display: block;}
+.topNav button a {color: #fff;text-decoration: none;width: 100%;height: 100%;padding: 14px 0;display: block;}
 .topNav button.active {background-color: #1b471d;color: #fff;}
 .topNav .dropdown:hover button,
 .topNav .dropdown:hover button a,

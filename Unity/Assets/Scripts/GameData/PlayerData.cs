@@ -7,7 +7,7 @@ public class PlayerData
 
     // Use with https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tobinary?view=net-9.0 
     // and https://learn.microsoft.com/en-us/dotnet/api/system.datetime.frombinary?view=net-9.0
-    // public long timeDayStart;
+    public JsonDateTime timeDayStart = (JsonDateTime) System.DateTime.Now;
     public int money = 1000;
 
     // public int careSlots;
